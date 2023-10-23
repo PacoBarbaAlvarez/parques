@@ -7,11 +7,14 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import com.example.parques.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val buttonGuardar = findViewById<Button>(R.id.Guardar)
         buttonGuardar.setOnClickListener {
@@ -45,6 +48,12 @@ class MainActivity : AppCompatActivity() {
             Log.d("MainActivity", "Parque infantil: " + parqueInfantil)
             Log.d("MainActivity", "Restaurante: " + restaurante)
             Log.d("MainActivity", "Zona de mascotas: "+ zonaMascotas)
+
+            binding.Guardar.setOnClickListener{
+
+
+                miDialogo.show(supportFragmentManager,"MiDialogo")
+            }
         }
     }
 }
