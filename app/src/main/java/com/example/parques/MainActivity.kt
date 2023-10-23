@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val miDialogo = MiDialogFragment()
 
         val buttonGuardar = findViewById<Button>(R.id.Guardar)
         buttonGuardar.setOnClickListener {
@@ -50,8 +51,6 @@ class MainActivity : AppCompatActivity() {
             Log.d("MainActivity", "Zona de mascotas: "+ zonaMascotas)
 
             binding.Guardar.setOnClickListener{
-
-
                 miDialogo.show(supportFragmentManager,"MiDialogo")
             }
         }
