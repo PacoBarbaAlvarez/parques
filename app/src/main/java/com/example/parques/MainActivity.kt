@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val miDialogo = MiDialogFragment()
@@ -50,9 +51,7 @@ class MainActivity : AppCompatActivity() {
             Log.d("MainActivity", "Restaurante: " + restaurante)
             Log.d("MainActivity", "Zona de mascotas: "+ zonaMascotas)
 
-            binding.Guardar.setOnClickListener{
                 miDialogo.show(supportFragmentManager,"MiDialogo")
-            }
         }
     }
 }
